@@ -1,0 +1,33 @@
+<p>
+  dashboard works!
+  
+</p>
+<div class="container" *ngIf="currentUser.email == 'vongani@gmail.com'">
+	{{currentUser.email}}
+	<button (click)="logout()">Logout</button>
+</div>
+<div *ngIf="data.tasks != 'undefined'">
+<table class="table">
+  <thead>
+    <tr>
+    <th>
+    Title:
+  </th>
+  <th>
+    Status:
+  </th>
+  <th>
+    Due Date:
+  </th>
+</tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of data.tasks">
+    <td>{{task.title}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.created_at}}</td>
+  </tr>
+  </tbody>
+  
+</table>
+</div>
